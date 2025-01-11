@@ -10,3 +10,5 @@ dependencies:
   - pip:
       - mlflow==2.8.1
       - wandb==0.16.0
+      - hydra-joblib-launcher==1.2.0
+      - omegaconf==2.3.0
