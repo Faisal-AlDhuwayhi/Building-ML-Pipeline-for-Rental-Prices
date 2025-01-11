@@ -33,8 +33,8 @@ def go(args):
     logger.info('Convert variable "last_review" from string to datetime type')
     df_clean['last_review'] = pd.to_datetime(df_clean['last_review'])
 
-    # Only keep rows that are in the proper geolocation of NYC
-    logger.info('Only keep rows that are in the proper geolocation of NYC')
+    # Drop rows that are not in the proper geolocation of NYC
+    logger.info('Drop rows that are not in the proper geolocation of NYC')
     idx = df_clean['longitude'].between(-74.25, -73.50) & df_clean['latitude'].between(40.5, 41.2)
     df_clean = df_clean[idx].copy()
     
